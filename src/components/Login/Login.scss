@@ -1,0 +1,36 @@
+.login {
+   & .container {
+      max-width: 80%;
+      margin: 0 auto;
+      & form {
+         margin: 5% auto;
+         width: 40%;
+         background-color: #ce97da;
+         border-radius: 15px;
+         box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+         padding: 2% 4%;
+         & .login__wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            & h2 {
+               margin-bottom: 4%;
+               font-size: 22px;
+               font-weight: 600;
+            }
+            & .login__item {
+               margin-bottom: 4%;
+               width: 100%;
+               & label {
+                  font-size: 18px;
+               }
+               & input {
+                  width: 100%;
+                  padding: 2% 4%;
+                  border-radius: 15px;
+               }
+            }
+         }
+      }
+   }
+}
