@@ -1,6 +1,6 @@
-import React, { useContext, Suspense } from 'react';
+import { useContext, Suspense} from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import {MAIN_ROUTE} from '../../urlPieces/urlPieces'
+import {MAIN} from '../../urlPieces/urlPieces'
 import { AuthContext } from '../../store/authObserver';
 import { publicRoutes } from './componentGenerator';
 
@@ -14,12 +14,12 @@ export function AppWrapper() {
           path={path}
           element={
             <Suspense fallback={<div>Loading...</div>}>
-              <Component></Component>
+              <Component />
             </Suspense>
           }
         />
       ))}
-      <Route path="*" element={<Navigate to={MAIN_ROUTE} />} />
+      <Route path="*" element={<Navigate to={MAIN} />} />
     </Routes>
   );
 }
