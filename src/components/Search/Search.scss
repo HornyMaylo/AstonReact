@@ -1,0 +1,21 @@
+.search {
+   margin: 10% 0;
+   & .container {
+      max-width: 80%;
+      margin: 0 auto;
+      & .search__wrapper {
+         width: 60%;
+         margin: 0 auto;
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         & input {
+            width: 80%;
+            padding: 2% 4%;
+            font-size: 18px;
+            border-radius: 15px
+         }
+
+      }
+   }
+}

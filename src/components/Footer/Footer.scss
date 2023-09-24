@@ -1,0 +1,22 @@
+footer {
+   width: 100%;
+   padding: 2% 0;
+   background-color: #37496e;
+   & .container {
+      max-width: 80%;
+      margin: 0 auto;
+      & .footer__wrapper {
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         & .footer__aston {
+            font-size: 18px;
+            color: #fff;
+         }
+         & .footer__owner {
+            font-size: 18px;
+            color: #fff;
+         }
+      }
+   }
+}

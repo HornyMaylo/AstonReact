@@ -1,0 +1,23 @@
+header {
+   width: 100%;
+   background-color: #37496e;
+   padding: 1%;
+   & .container {
+      max-width: 80%;
+      margin: 0 auto;
+      & .header__wrapper {
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         & .header__item {
+            width: 33.33%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            & button {
+               margin-right: 3%;
+            }
+         }
+      }
+   }
+}
