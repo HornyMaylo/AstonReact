@@ -1,22 +1,15 @@
-import { Header } from "./components/Header/Header";
-import { Search } from './components/Search/Search';
-import { Registration } from "./components/Registration/Registration";
-import { Login } from "./components/Login/Login";
-import { Footer } from './components/Footer/Footer';
-import { FilmsListWrapper } from './components/FilmsListWrapper/FilmsListWrapper';
-import './App.scss'
+import React from 'react';
+import './App.scss';
+import { BrowserRouter } from 'react-router-dom';
 
-export function App() {
+import { Header } from './components/Header/Header'
+
+function App() {
   return (
-    <>
+    <BrowserRouter>
       <Header />
-      <div className="body">
-        <Search />
-        <FilmsListWrapper />
-        <Registration />
-        <Login />
-      </div>
-      <Footer />
-    </>
+    </BrowserRouter>
   );
 }
+
+export default App;
