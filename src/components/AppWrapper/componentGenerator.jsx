@@ -12,10 +12,15 @@ import {
 
 
 const MainPage = lazy(() => import('../../pages/MainPage/MainPage'));
+const FilmPage = lazy(() => import('../../pages/FilmPage/FilmPage'));
 
 export const publicRoutes = [
   {
     path: MAIN,
     Component: MainPage,
+  },
+  {
+    path: ITEM,
+    Component: FilmPage,
   },
 ];

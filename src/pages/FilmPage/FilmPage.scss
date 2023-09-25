@@ -1,0 +1,30 @@
+.filmPage {
+   padding: 5% 0;
+   width: 80%;
+   margin: 0 auto;
+   display: flex;
+   & .filmPage__item:first-child {
+      margin-right: 5%;
+   }
+   & .filmPage__item {
+      width: 40%;
+      & img {
+         width: 100%;
+      }
+      & h1 {
+         font-size: 25px;
+         font-weight: 800;
+         margin-bottom: 3%;
+      }
+      .filmPage__description {
+         font-size: 18px;
+         font-weight: 400;
+         & ul {
+            margin-bottom: 3%;
+         }
+         & p {
+            margin-bottom: 3%;
+         }
+      }
+   }
+}
