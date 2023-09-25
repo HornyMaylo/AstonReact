@@ -1,6 +1,6 @@
 import { useContext, Suspense} from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import {MAIN} from '../../urlPieces/urlPieces'
+import {MAIN} from '../../urlPieces/urlPieces';
 import { AuthContext } from '../../store/authObserver';
 import { publicRoutes } from './componentGenerator';
 

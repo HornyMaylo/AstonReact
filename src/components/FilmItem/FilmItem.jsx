@@ -1,14 +1,29 @@
-import peaky from '../../assets/peakyBlinders.jpg';
-import {FavoriteButton} from '../FavoriteButton/FavoriteButton'
+import { Link } from 'react-router-dom';
+import { FavoriteButton } from '../FavoriteButton/FavoriteButton';
+import { Spinner } from '../Spinner/Spinner';
+
+import { useGetFilmByIdQuery } from '../../store/Api/films';
 import './FilmItem.scss';
 
-export function FilmItem() {
+import { MAIN } from '../../urlPieces/urlPieces';
+
+export function FilmItem({ itemId }) {
+  const { data = [], isLoading, error } = useGetFilmByIdQuery(itemId);
+
+  if (isLoading) {
+    return <Spinner />;
+  } 
+  if (error) {
+    return <div>Some Error</div>;
+  }
   return (
     <div className="filmItem">
       <div className="film__wrapper">
-        <img src={peaky} alt="peakyBlinders" />
-        <h3>Peaky blinders</h3>
-        <FavoriteButton />
+        <Link to={`${MAIN}movie/${itemId}`}>
+          <img src={data.poster.url} alt={data.name} />
+        </Link>
+        <h3>{data.name}</h3>
+        <FavoriteButton id={itemId} />
       </div>
     </div>
   );
