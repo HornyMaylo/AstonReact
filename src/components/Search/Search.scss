@@ -7,13 +7,38 @@
          width: 60%;
          margin: 0 auto;
          display: flex;
-         align-items: center;
+         align-items: baseline;
          justify-content: space-between;
-         & input {
+         & .search__input {
             width: 80%;
-            padding: 2% 4%;
-            font-size: 18px;
-            border-radius: 15px
+            display: flex;
+            flex-direction: column;
+            & input {
+               width: 100%;
+               padding: 2% 4%;
+               font-size: 18px;
+               border-radius: 15px
+            }
+            & .dropDown {
+               padding: 10px;
+               width: 100%;
+               border: 1px solid #000;
+               background-color: #f8bfed;
+               border-radius: 0 0 15px 15px;
+               display: flex;
+               flex-direction: column;
+               & a {
+                  cursor: pointer;
+                  border-bottom: 1px solid rgba($color: #525252, $alpha: .3);
+                  padding-bottom: 1.5%;
+                  margin-bottom: 1.5%;
+                  color: #000000;
+               }
+               & a:last-child {
+                  border-bottom: none;
+                  margin-bottom: 0;
+               }
+            }
          }
 
       }
