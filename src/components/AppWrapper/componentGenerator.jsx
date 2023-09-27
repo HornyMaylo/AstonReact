@@ -14,6 +14,12 @@ import {
 const MainPage = lazy(() => import('../../pages/MainPage/MainPage'));
 const FilmPage = lazy(() => import('../../pages/FilmPage/FilmPage'));
 const SearchPage = lazy(() => import('../../pages/SearchPage/SearchPage'));
+const RegisterPage = lazy(() =>
+  import('../../pages/RegistrationPage/RegistrationPage'),
+);
+const LoginPage = lazy(() =>
+  import('../../pages/LoginPage/LoginPage'),
+);
 
 export const publicRoutes = [
   {
@@ -27,5 +33,13 @@ export const publicRoutes = [
   {
     path: SEARCH,
     Component: SearchPage,
+  },
+  {
+    path: REGISTER,
+    Component: RegisterPage,
+  },
+  {
+    path: LOGIN,
+    Component: LoginPage,
   },
 ];

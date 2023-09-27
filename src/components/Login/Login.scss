@@ -1,34 +1,43 @@
-.login {
-   & .container {
-      max-width: 80%;
-      margin: 0 auto;
+.form {
+   margin: 0 auto;
+   width: 35%;
+   flex: 1 1 auto;
+   padding: 3% 0;
+   & .form__wrapper {
+      width: 100%;
+      padding: 3% 6%;
+      border: 1px solid #000;
+      background-color: #f8bfed;
+      box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+      border-radius: 15px;
+      & h1 {
+         text-align: center;
+         font-size: 25px;
+         font-weight: 800;
+         margin-bottom: 5%;
+      }
+      & .register {
+         margin-right: 5%;
+      }
       & form {
-         margin: 5% auto;
-         width: 40%;
-         background-color: #ce97da;
-         border-radius: 15px;
-         box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
-         padding: 2% 4%;
-         & .login__wrapper {
+         & .form__item {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            & h2 {
-               margin-bottom: 4%;
-               font-size: 22px;
+            margin-bottom: 6%;
+            & .error {
+               font-size: 16px;
+               color: red;
                font-weight: 600;
             }
-            & .login__item {
-               margin-bottom: 4%;
+            & label {
+               margin-bottom: 1%;
+               font-weight: 400;
+            }
+            & input {
                width: 100%;
-               & label {
-                  font-size: 18px;
-               }
-               & input {
-                  width: 100%;
-                  padding: 2% 4%;
-                  border-radius: 15px;
-               }
+               padding: 1.5% 3%;
+               border-radius: 15px;
+               font-size: 16px
             }
          }
       }
