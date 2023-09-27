@@ -29,7 +29,7 @@ export function FavoriteButton({ id }) {
   if(checkFilm && authApi[0]) {
     return (
       <button
-        className="favorite__btn"
+        className="favorite__delete"
         onClick={() => deleteFilmFromFav(id)}
       >
         Delete
@@ -37,11 +37,8 @@ export function FavoriteButton({ id }) {
     );
   }
   return (
-      <button
-        className="favorite__btn"
-        onClick={() => addFilmToFav(id)}
-      >
-        Add
-      </button>
+    <button className="favorite__add" onClick={() => addFilmToFav(id)}>
+      Add
+    </button>
   );
 }

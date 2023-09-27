@@ -1,21 +1,30 @@
+import { useContext } from 'react';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
-import {useGetFilmByNameQuery} from '../../store/Api/films'
+import { useGetFilmByNameQuery } from '../../store/Api/films';
+import { AuthContext } from '../../store/authObserver';
+import { addToHistory } from '../../store/slices/historyReducer';
 
 import './Search.scss';
 
 export function Search() {
-   const [showDropDown, setShowDropDown] = useState(false);
-   const [query, setQuery] = useState('');
-   const navigate = useNavigate();
+  const { authApi } = useContext(AuthContext);
+  const dispatch = useDispatch();
+  const [showDropDown, setShowDropDown] = useState(false);
+  const [query, setQuery] = useState('');
+  const navigate = useNavigate();
 
-   const { data = [] } = useGetFilmByNameQuery(query, {
-      skip: query.length < 2, 
-   });
+  const { data = [] } = useGetFilmByNameQuery(query, {
+    skip: query.length < 2,
+  });
 
-   const goSearch = () => {
-      navigate(`/search/${query}`);
-   }
+  const goSearch = () => {
+    if (authApi[0]) {
+      dispatch(addToHistory(query));
+    }
+    navigate(`/search/${query}`);
+  };
 
   return (
     <div className="search">
