@@ -1,16 +1,47 @@
-import { useState } from 'react';
+import { useContext } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../store/authObserver';
+import { addToFavorite, removeFromFavorite } from '../../store/slices/favoriteReducer';
 
 import './FavoriteButton.scss';
 
-export function FavoriteButton() {
-  const [label, setLabel] = useState(true);
+export function FavoriteButton({ id }) {
+  const { authApi } = useContext(AuthContext);
+  const dispatch = useDispatch();
+  const favoritesFilms = useSelector((state) => state.favorites.favorites);
+  const checkFilm = favoritesFilms.includes(id);
+
+  const navigate = useNavigate();
+
+  const deleteFilmFromFav = (filmId) => {
+    dispatch(removeFromFavorite(filmId));
+  }
+
+  const addFilmToFav = (filmId) => {
+    if(authApi[0]) {
+      dispatch(addToFavorite(filmId))
+    } else {
+      navigate('/signin')
+    }
+  }
+
+  if(checkFilm && authApi[0]) {
+    return (
+      <button
+        className="favorite__btn"
+        onClick={() => deleteFilmFromFav(id)}
+      >
+        Delete
+      </button>
+    );
+  }
   return (
-    <button
-      className="favorite__btn"
-      onClick={() => setLabel(!label)}
-      style={label ? { backgroundColor: 'green' } : { backgroundColor: 'red' }}
-    >
-      {label ? 'Добавить' : 'Удалить'}
-    </button>
+      <button
+        className="favorite__btn"
+        onClick={() => addFilmToFav(id)}
+      >
+        Add
+      </button>
   );
 }

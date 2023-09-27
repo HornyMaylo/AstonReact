@@ -20,6 +20,7 @@ const RegisterPage = lazy(() =>
 const LoginPage = lazy(() =>
   import('../../pages/LoginPage/LoginPage'),
 );
+const FavPage = lazy(() => import('../../pages/FavoritePage/FavoritesPage'));
 
 export const publicRoutes = [
   {
@@ -41,5 +42,12 @@ export const publicRoutes = [
   {
     path: LOGIN,
     Component: LoginPage,
+  },
+];
+
+export const authRoutes = [
+  {
+    path: FAVORITE,
+    Component: FavPage,
   },
 ];
