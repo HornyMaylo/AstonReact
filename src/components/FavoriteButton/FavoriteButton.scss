@@ -1,5 +1,12 @@
-.favorite__btn {
+.favorite__add {
    background-color: rgb(4, 185, 4);
+   border: none;
+   border-radius: 0;
+   padding: 3% 6%;
+}
+
+.favorite__delete {
+   background-color: red;
    border: none;
    border-radius: 0;
    padding: 3% 6%;

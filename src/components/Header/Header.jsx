@@ -6,6 +6,8 @@ import setDataToLS from '../../utils/setDataToLS';
 import { removeUser } from '../../store/slices/userReducer';
 import { REGISTER } from '../../urlPieces/urlPieces';
 import { LOGIN } from '../../urlPieces/urlPieces';
+import { FAVORITE } from '../../urlPieces/urlPieces';
+import { HISTORY } from '../../urlPieces/urlPieces';
 
 import './Header.scss';
 
@@ -31,8 +33,8 @@ export function Header() {
                 <button onClick={() => navigate('/')}>Home</button>
               </div>
               <div className=" header__item header__authUserBtns">
-                <button>Favorite</button>
-                <button>History</button>
+                <button onClick={() => navigate(FAVORITE)}>Favorite</button>
+                <button onClick={() => navigate(HISTORY)}>History</button>
               </div>
               <div className="header__item header__exit">
                 <button onClick={exit}>Exit</button>
