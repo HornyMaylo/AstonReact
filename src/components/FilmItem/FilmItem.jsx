@@ -20,7 +20,7 @@ export function FilmItem({ itemId }) {
     <div className="filmItem">
       <div className="film__wrapper">
         <Link to={`${MAIN}movie/${itemId}`}>
-          <img src={data.poster.url} alt={data.name} />
+          <img src={data.poster ? data.poster.url : '404'} alt={data.name} />
         </Link>
         <h3>{data.name}</h3>
         <FavoriteButton id={itemId} />

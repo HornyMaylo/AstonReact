@@ -6,13 +6,13 @@ export const filmsApi = createApi({
     baseUrl: 'https://api.kinopoisk.dev',
     method: 'GET',
     headers: {
-      'X-API-KEY': 'D7T5T42-1Z5MN79-HJZJRZC-MW9Y5BM',
+      'X-API-KEY': 'MFX9ZFS-Z54MDCP-Q07R1GB-V4P6TGM',
       Accept: 'application/json',
     },
   }),
   endpoints: (build) => ({
     getFilms: build.query({
-      query: () => `/v1.3/movie?limit=9`,
+      query: () => `/v1.3/movie?limit=2`,
     }),
     getFilmById: build.query({
       query: (id) => ({
