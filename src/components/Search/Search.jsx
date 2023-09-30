@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useGetFilmByNameQuery } from '../../store/Api/films';
 import { AuthContext } from '../../store/authObserver';
 import { addToHistory } from '../../store/slices/historyReducer';
+import { useDebounce } from '../../hooks/useDebounce';
 
 import './Search.scss';
 
@@ -13,10 +14,11 @@ export function Search() {
   const dispatch = useDispatch();
   const [showDropDown, setShowDropDown] = useState(false);
   const [query, setQuery] = useState('');
+  const debounce = useDebounce(query);
   const navigate = useNavigate();
 
-  const { data = [] } = useGetFilmByNameQuery(query, {
-    skip: query.length < 2,
+  const { data = [] } = useGetFilmByNameQuery(debounce, {
+    skip: debounce.length < 2,
   });
 
   const goSearch = () => {
