@@ -39,7 +39,7 @@ export function Search() {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               onFocus={() => setShowDropDown(true)}
-              onBlur={() => setTimeout(() => setShowDropDown(false), 1000)}
+              onBlur={() => setTimeout(() => setShowDropDown(false), 200)}
             />
             {query.length > 2 && data.length && showDropDown ? (
               <div className="dropDown">

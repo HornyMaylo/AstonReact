@@ -4,7 +4,8 @@ export function useDebounce(query) {
   const [finalQuery, setFinalQuery] = useState(query);
 
   useEffect(() => {
-    setFinalQuery(query);
+      const debounce = setTimeout(() => setFinalQuery(query), 200);
+      return () => clearTimeout(debounce);
   }, [query]);
   return finalQuery;
 }

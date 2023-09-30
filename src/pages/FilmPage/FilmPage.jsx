@@ -36,7 +36,7 @@ export default function FilmPage() {
             </ul>
             <p>Описание: {data.shortDescription}</p>
             <p>Бюджет: {data.budget.value || 'Неизвестно'}</p>
-            <FavoriteButton />
+            <FavoriteButton id={filmId} />
          </div>
          </div>
       </div>

@@ -3,11 +3,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import { FilmItem } from '../../components/FilmItem/FilmItem';
 import { resetFavorites } from '../../store/slices/favoriteReducer';
 
+import currentUserKeyCreator from '../../utils/currentUserKeyCreator';
+import getDataFromLS from '../../utils/getDataFromLS';
+
 import './FavoritesPage.scss';
 export default function FavoritesPage() {
   const dispatch = useDispatch();
   const favoritesFilms = useSelector((state) => state.favorites.favorites);
 
+  // const favoritesFilms = getDataFromLS(currentUserKeyCreator('favorite')) || [];
   if (favoritesFilms.length > 0) {
     return (
       <>
