@@ -6,13 +6,15 @@ import './HistoryPage.scss';
 export default function HistoryPage() {
   const dispatch = useDispatch();
   const history = useSelector((state) => state.history.history);
-
-  if (history.length > 0) {
+  const filteredHisArr = history.filter(
+    (el, ind) => ind === history.indexOf(el),
+  );
+  if (filteredHisArr.length > 0) {
     return (
       <>
         <button onClick={() => dispatch(resetHistory())}>Reset history</button>
         <div className="historyPage">
-          {history.map((item, id) => (
+          {filteredHisArr.map((item, id) => (
             <Link key={id} to={`/search/${item}`}>
               {item}
             </Link>

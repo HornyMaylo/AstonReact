@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../store/authObserver';
@@ -7,16 +7,12 @@ import {
   removeFromFavorite,
 } from '../../store/slices/favoriteReducer';
 
-import currentUserKeyCreator from '../../utils/currentUserKeyCreator';
-import getDataFromLS from '../../utils/getDataFromLS';
-
 import './FavoriteButton.scss';
 
 export function FavoriteButton({ id }) {
   const { authApi } = useContext(AuthContext);
   const dispatch = useDispatch();
   const favoritesFilms = useSelector((state) => state.favorites.favorites);
-  // const favoritesFilms = getDataFromLS(currentUserKeyCreator('favorite')) || [];
   const checkFilm = favoritesFilms.includes(id);
 
   const navigate = useNavigate();
