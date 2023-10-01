@@ -12,13 +12,16 @@ const historySlice = createSlice({
     addToHistory(state, action) {
       state.history.push(action.payload);
     },
+    updateHistory(state, action) {
+      state.history.push(action.payload);
+    },
     resetHistory(state) {
       state.history = [];
     },
   },
 });
 
-export const { createHistory, addToHistory, resetHistory } =
+export const { createHistory, addToHistory, updateHistory, resetHistory } =
   historySlice.actions;
 
 export const history = historySlice.reducer;
