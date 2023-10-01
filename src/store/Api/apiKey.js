@@ -1,1 +1,1 @@
-export const key = 'PXR03WY-6HH42QH-QZV9S5X-66J2A4Y';
+export const key = 'D7T5T42-1Z5MN79-HJZJRZC-MW9Y5BM';
